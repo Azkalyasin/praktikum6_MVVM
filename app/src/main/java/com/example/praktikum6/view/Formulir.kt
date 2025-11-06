@@ -1,8 +1,37 @@
 package com.example.praktikum6.view
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
+import com.example.praktikum6.R
 
 @Composable
-fun FormIsian () {
-
+fun FormIsian (
+    jenisK: List<String> = listOf ("laki-laki", "perempuan"),
+    OnSubmitBtnClick : () -> Unit
+) {
+    Scaffold (modifier = Modifier,
+        topBar = {
+            TopAppBar(
+                title = { Text(text = stringResource(id = R.string.home),
+                    color = Color.White)},
+                colors = TopAppBarDefaults.topAppBarColors
+                    (containerColor = colorResource(id = R.color.teal_700))
+            )
+        }
+        }
+    }
 }
